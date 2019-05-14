@@ -1,0 +1,21 @@
+CREATE TABLE heroes (
+
+    hero_id int PRIMARY KEY AUTO_INCREMENT,
+
+    name varchar(100) not null,
+
+    city varchar(100) not null,
+
+    superhero boolean not null,
+
+    image BLOB) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+	
+// insert hero information. Pictures download manually
+
+INSERT INTO heroes (name, city, superhero)
+Values 
+		('Superman', 'Metropolis', true),
+		('Batman', 'Gothem city', true),
+		('Lara Croft', 'Buckinghamshire', false)
+		
