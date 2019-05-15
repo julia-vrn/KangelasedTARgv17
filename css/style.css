@@ -10,6 +10,7 @@ body{
   .container {
     background-color: rgba(43, 37, 48, 0.89);
     margin-bottom: 1rem;
+    margin-top: -2rem;
     
 
   }
@@ -89,8 +90,13 @@ body{
   color: #ffd9b8;
 }
 .owl-theme .owl-controls{
-  margin-top: 60px;
+  /*margin-top: 60px;*/
 }
+
+.owl-wrapper-outer {
+  padding-bottom: 5rem;
+}
+
 .owl-theme .owl-controls .owl-page span{
   width: 32px;
   height: 10px;
