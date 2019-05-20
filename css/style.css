@@ -10,11 +10,19 @@ body{
   .container {
     background-color: rgba(43, 37, 48, 0.89);
     margin-bottom: 1rem;
-    margin-top: -2rem;
+   /* margin-top: -2rem;*/
     
 
   }
 
+  .welcome {
+    color: #bd986b;
+    font-weight: 700;
+    padding: 2rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+  }
 
 .testimonial{
   background: #fff;
@@ -22,7 +30,7 @@ body{
   padding: 30px 30px 50px;
   margin: 0 15px 100px;
   position: relative;
-  margin-top: 168px;
+  margin-top: 5rem;
 }
 
 .owl-item {
@@ -58,6 +66,7 @@ body{
   margin-bottom: 30px;
   opacity: 0.9;
   letter-spacing: -1px;
+  height: 20vh;
 }
 .testimonial .testimonial-content{
   width: 100%;
@@ -94,7 +103,7 @@ body{
 }
 
 .owl-wrapper-outer {
-  padding-bottom: 5rem;
+  /*padding-bottom: 5rem;*/
 }
 
 .owl-theme .owl-controls .owl-page span{
@@ -125,4 +134,13 @@ body{
 
   .btn-start a:hover {
     transform: scale(1.5);
+  }
+
+  .footer {
+    color: #bd986b;
+    font-size: 1.5rem;
+  }
+
+  .bold {
+    font-weight: 700;
   }
