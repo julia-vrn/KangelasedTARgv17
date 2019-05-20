@@ -10,10 +10,13 @@ body{
   .container {
     background-color: rgba(43, 37, 48, 0.89);
     margin-bottom: 1rem;
-    margin-top: -2rem;
     
 
   }
+
+.bold{
+  font-weight: 700;
+}
 
 
 .testimonial{
@@ -58,6 +61,7 @@ body{
   margin-bottom: 30px;
   opacity: 0.9;
   letter-spacing: -1px;
+  height: 20vh;
 }
 .testimonial .testimonial-content{
   width: 100%;
@@ -90,13 +94,8 @@ body{
   color: #ffd9b8;
 }
 .owl-theme .owl-controls{
-  /*margin-top: 60px;*/
+  margin-top: 60px;
 }
-
-.owl-wrapper-outer {
-  padding-bottom: 5rem;
-}
-
 .owl-theme .owl-controls .owl-page span{
   width: 32px;
   height: 10px;
