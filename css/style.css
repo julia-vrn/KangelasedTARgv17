@@ -10,15 +10,10 @@ body{
   .container {
     background-color: rgba(43, 37, 48, 0.89);
     margin-bottom: 1rem;
-<<<<<<< HEAD
-   /* margin-top: -2rem;*/
-=======
->>>>>>> 0f6bb4e71ebf70c6e42d46ea51d226509b779243
     
 
   }
 
-<<<<<<< HEAD
   .welcome {
     color: #bd986b;
     font-weight: 700;
@@ -27,12 +22,16 @@ body{
     text-transform: uppercase;
     font-family: 'Orbitron', sans-serif;
   }
-=======
+
 .bold{
   font-weight: 700;
 }
 
->>>>>>> 0f6bb4e71ebf70c6e42d46ea51d226509b779243
+
+.bold{
+  font-weight: 700;
+}
+
 
 .testimonial{
   background: #fff;
@@ -44,7 +43,7 @@ body{
 }
 
 .owl-item {
-  height: 90vh;
+  height: 70vh;
 }
 
 .testimonial:before,
@@ -109,16 +108,8 @@ body{
   color: #ffd9b8;
 }
 .owl-theme .owl-controls{
-  margin-top: 60px;
+ /* margin-top: 60px;*/
 }
-<<<<<<< HEAD
-
-.owl-wrapper-outer {
-  /*padding-bottom: 5rem;*/
-}
-
-=======
->>>>>>> 0f6bb4e71ebf70c6e42d46ea51d226509b779243
 .owl-theme .owl-controls .owl-page span{
   width: 32px;
   height: 10px;
@@ -157,3 +148,73 @@ body{
   .bold {
     font-weight: 700;
   }
+
+/****MODAL*****/
+.modal.show .modal-dialog {
+  position: relative;
+    margin: 0 auto;
+    top: 15%;
+}
+
+.modal-content {
+  height: 65vh;
+  background-image: linear-gradient(
+    to right, transparent, #21183d
+  ), url("../img/ohno.png");
+  background-color: rgb(43, 37, 48);
+  background-size: cover;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-header span {
+  color: wheat;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.situation--text {
+  text-align: right;
+  font-size: 7.5rem;
+  color: #e6d329;
+  font-family: 'Orbitron', sans-serif;
+  padding-top: 8rem;
+  padding-left: 12rem;
+  padding-right: 1rem;
+  font-weight: 700;
+}
+.situation--text__red {
+  
+  color: red;
+  -webkit-text-fill-color: #e6d329; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: red;
+  font-weight: 800;
+  background: #21183dca;
+  padding: 2rem;
+}
+
+
+.modal-footer a {
+  text-decoration: none;
+  background: #21183dca;
+  padding: 2rem;
+  font-weight: 800;
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: #e6d329;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.2s;
+}
+
+.modal-footer a:hover {
+  transform: translateY(-2rem);
+}
+
+.modal-footer a:active {
+  transform: translateY(0);
+}
