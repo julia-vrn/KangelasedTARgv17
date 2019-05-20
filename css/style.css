@@ -10,11 +10,15 @@ body{
   .container {
     background-color: rgba(43, 37, 48, 0.89);
     margin-bottom: 1rem;
+<<<<<<< HEAD
    /* margin-top: -2rem;*/
+=======
+>>>>>>> 0f6bb4e71ebf70c6e42d46ea51d226509b779243
     
 
   }
 
+<<<<<<< HEAD
   .welcome {
     color: #bd986b;
     font-weight: 700;
@@ -23,6 +27,12 @@ body{
     text-transform: uppercase;
     font-family: 'Orbitron', sans-serif;
   }
+=======
+.bold{
+  font-weight: 700;
+}
+
+>>>>>>> 0f6bb4e71ebf70c6e42d46ea51d226509b779243
 
 .testimonial{
   background: #fff;
@@ -99,13 +109,16 @@ body{
   color: #ffd9b8;
 }
 .owl-theme .owl-controls{
-  /*margin-top: 60px;*/
+  margin-top: 60px;
 }
+<<<<<<< HEAD
 
 .owl-wrapper-outer {
   /*padding-bottom: 5rem;*/
 }
 
+=======
+>>>>>>> 0f6bb4e71ebf70c6e42d46ea51d226509b779243
 .owl-theme .owl-controls .owl-page span{
   width: 32px;
   height: 10px;
