@@ -84,7 +84,47 @@ require("abifunktsioonid.php");?>
                 </div>
            </div>
         </div>
+          
+           <?php       
+        
+        $kask=$yhendus->prepare("Select situation_id from situations");
+        $kask->bind_result($id);
+        $kask->execute();
+        while($kask->fetch()){
+          echo "<div style='color:white;'>".$id;
+          echo "</div>"; 
+          }
+  ?>
+  <?php
+  $res=mysqli_query($yhendus, 'Select * from situations');
+  $result=array();
+  while($row=$res->fetch_array()){
+        $result[]=$row[0];
+ // echo "<div style='color:white;'>". $row[0];
+ // echo "</div>"; 
+}
+    //echo "<div style='color:white;'>". $result[0];
+  //echo "</div>";
   
+  // echo "<br";
+ // echo "<br>";
+  
+  
+      $randomSituation = $result[array_rand($result, 1)];
+      //echo "<div style='color:white;'> random ". $randomSituation;
+ // echo "</div>";
+  
+  
+  $kask=$yhendus->prepare("Select name from situations where situation_id=".$randomSituation);
+  $kask->bind_result($name);
+    $kask->execute();
+    while($kask->fetch()){
+    //echo "<div style='color:white;'>".$name;
+ // echo "</div>";
+    
+    }
+        ?>
+
 
 <!--MODAL WINDOW-->
 
@@ -104,7 +144,7 @@ require("abifunktsioonid.php");?>
                                     </div>
                                     <div class="modal-body">
                                         <div class="situation--text">
-                                             There is the <span class="situation--text__red">[SITUATION]</span> in the city!
+                                             There is the <?php echo "<span class='situation--text__red'>" .$name; echo"</span>";?> in the city!
                                         </div>
                                        
                                     </div>
