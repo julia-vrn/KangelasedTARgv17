@@ -87,7 +87,7 @@ body{
   color: #ffd9b8;
 }
 .owl-theme .owl-controls{
- /* margin-top: 60px;*/
+ margin-top: 3rem;
 }
 .owl-theme .owl-controls .owl-page span{
   width: 32px;
