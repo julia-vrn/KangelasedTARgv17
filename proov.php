@@ -146,10 +146,10 @@ require("abifunktsioonid.php");?>
                                         <div class="situation--text">
                                              There is the <?php echo "<span class='situation--text__red'>" .$name; echo"</span>";?> in the city!
                                         </div>
-                                       
+                                        <?php $_SESSION['situation'] = $randomSituation; ?>
                                     </div>
                                     <div class="modal-footer justify-content-between">
-                                    <a href="#">Save the day!</a>
+                                    <a href=battle.php">Save the day!</a>
                                     </div>
                                   </div>
                                 </div>
