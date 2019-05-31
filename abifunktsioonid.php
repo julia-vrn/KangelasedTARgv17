@@ -1,10 +1,11 @@
 <?php
-$serverinimi="localhost";
-$kasutajanimi="OlgaMaruta";
-$parool="123456";
-$andmebaas="heroes";
+$serverinimi="d76662.mysql.zonevs.eu";
+$kasutajanimi="d76662sa247210";
+$parool="nk5EphPE5A67S864U";
+$andmebaas="d76662sd284907";
 $yhendus=new mysqli($serverinimi,$kasutajanimi,$parool,$andmebaas);
 $yhendus->set_charset("utf-8");
+  
 
 function showAllheroes() {
     global $yhendus;
@@ -44,10 +45,10 @@ function getSituation($situation) {
 }
 
 function battle() {
-    $number = rand(1,6);
+    $number = rand(1,3);
 
-    if ($number % 2 != 0) return "You lose!";
-    else return "Yow won!";
+    if ($number == 1) return "You lose!";
+    else return "You won!";
 }
 ?>
 

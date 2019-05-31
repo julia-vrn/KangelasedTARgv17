@@ -57,8 +57,8 @@ require("abifunktsioonid.php");
                 <div id="testimonial-slider" class="owl-carousel">
 
                     <?php
-                    $kask=$yhendus->prepare("Select hero_id, superhero, name, city, description, image from heroes");
-                    $kask->bind_result($id, $super, $name ,$city, $description, $image);
+                    $kask=$yhendus->prepare("Select hero_id, superhero, name, city, description, image, result from heroes");
+                    $kask->bind_result($id, $super, $name ,$city, $description, $image, $result);
                     $kask->execute();
                     while($kask->fetch()){
                         echo "<div class='testimonial'>";
@@ -66,6 +66,8 @@ require("abifunktsioonid.php");
                             echo "<span class='icon fab fa-superpowers'></span>";}
                         else {echo "<span class='icon fas fa-mask fa-7x;'></span>";}
                         echo "<p class='description'>";
+                        echo "<span class='bold'>People saved: </span>" .htmlspecialchars($result);
+                        echo "<br>";
                         echo "<span class='bold'>City: </span>" .htmlspecialchars($city);
                         echo "<br>";
                         echo "<span class='bold'>Description: </span>" .htmlspecialchars($description);
@@ -143,8 +145,12 @@ require("abifunktsioonid.php");
                             </div>
                             <div class="modal-body">
                                 <div class="situation--text">
-                                    There is the [SITUATION] in the city!
+                                    There is the <?php echo "<span class='situation--text__red'>" .$name; echo"</span>";?> in the city!
                                 </div>
+                                                                      <?php $_SESSION['situation'] = $randomSituation; 
+                                              echo "<div style='color:white;'> situation ". $_SESSION['situation'];
+                                               echo "</div>"; 
+                                             ?>
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <a href="battle.php">Save the day!</a>

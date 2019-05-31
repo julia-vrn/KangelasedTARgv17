@@ -1,11 +1,12 @@
 <?php
 session_start();
 require("abifunktsioonid.php");
-
 $situation = $_SESSION['situation'];
+//echo "situation" .$situation;
 $kask = $yhendus->prepare("Select situation_id, name, description,people_number, image from situations where situation_id=".$situation);
 $kask->bind_result($id, $name, $description, $people_number, $image);
 $kask->execute();
+    $_SESSION['result'] = battle();
 ?>
 
 <!DOCTYPE html>
@@ -91,6 +92,7 @@ $kask->execute();
                     <span class='situation--people'>People involved: <span class='situation--people__number'>
                     ".$people_number."
                     </span></span>";
+                  $_SESSION['people']=$people_number;
                 }?>
             </div>
 

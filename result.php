@@ -3,6 +3,10 @@
 require("abifunktsioonid.php");
   $_SESSION['hero'] = $_GET['hero'];
   $_SESSION['situation'] = $_GET['situation'];
+  $_SESSION['result1']=$_SESSION['result'];
+  $_SESSION['people1']=$_SESSION['people'];
+   
+  
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,19 +55,44 @@ require("abifunktsioonid.php");
   <title>Document</title>
 </head>
 <body>
-    <div class="demo">
-        <div class="container">
+    <div class="demo ">
+        <div class="container result">
 
             <!--HEADER class WELCOME in style.css --> 
             <div class="row welcome">
                 <div class="col-12 d-flex justify-content-center">Welcome to the city of heroes</div>
             </div>
             <!--END OF HEADER-->
+          <!--RESULT-->
+          
+          <div class="row display-result">
+             <?php 
+  
+             echo "<div class='col-12 d-flex justify-content-center'><span class='display--result'> ". $_SESSION['result1'];
+                                              echo "</span></div>"; 
+ 
+  if($_SESSION['result1']=='You won!'){
+      echo "<div class='col-12 d-flex justify-content-center'><span class='display--result__saved'>People saved: ".$_SESSION['people1'];
+                                              echo "</span></div>";
+    
+    $kask=$yhendus->prepare("Update heroes set result=result+".$_SESSION['people1']." where hero_id=?");
+    $kask->bind_param("i", $_SESSION['hero']);
+    $kask->execute();   
+ }
+  if($_SESSION['result1']=='You lose!') {
+    echo "<div class='col-12 d-flex justify-content-center'><span class='display--result__lost'>People lost: ".$_SESSION['people1'];
+                                              echo "</span></div>"; 
+ 
+  }
+  session_destroy(); 
+
+?>
+          </div>
 
             <!--SITUATION-->
             <div class="row random-situation">
               <div class="col-6 situation--image d-flex justify-content-end">
-              <?php $result = battle(); echo $result;
+              <?php 
               $kask=$yhendus->prepare("Select hero_id, superhero, name, city, description, image from heroes
 where hero_id=".$_SESSION['hero']."");
               $kask->bind_result($id, $super, $name ,$city, $description, $image);
@@ -79,6 +108,7 @@ where hero_id=".$_SESSION['hero']."");
                       else {echo "<span class='post'>Hero</span>";}
                       echo "</div>";
                   echo "</div>";
+             
               }
               ?>
               <?php
@@ -95,42 +125,17 @@ where hero_id=".$_SESSION['hero']."");
                     <span class='situation--description'>
                     ".$description."
                     </span>
-                    <span class='situation--people'>People involved: <span class='situation--people__number'>
-                    ".$people_number."
-                    </span></span>";
+                    </span>";
                 }?>
               </div>
-
             </div>
-            <div class="row p-5 situation">
+          
+          <div class="row p-5 situation">
               <div class="col-12 start-adventure d-flex justify-content-center">
-                  <button type="button" class="btn-adventure" data-toggle="modal" data-target="#exampleModal" name="submit_btn"
+                  <button type="button" class="btn-adventure" name="submit_btn"
                           onclick="location.href = 'proov.php';">
                           Try Again!
                   </button>
-                
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog  mw-100 w-50 h-50" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                  <div class="situation--text">
-                                       There is the <span class="situation--text__red">[SITUATION]</span> in the city!
-                                </div>
-                                 
-                              </div>
-                              <div class="modal-footer justify-content-between">
-                              <a href="#">Save the day!</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                  
 
               </div>
 
@@ -148,9 +153,7 @@ where hero_id=".$_SESSION['hero']."");
 
             </div> 
             </div>
-            
-        </div>
-    </div>
+
  
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
