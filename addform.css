@@ -1,0 +1,67 @@
+body{    
+  font-family: 'Roboto Condensed', sans-serif;
+  background-image: url("marvel.jpg");
+}
+
+.form-control {
+  width: 41%;
+}
+
+/* The cont */
+.cont {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.cont input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+
+.row {
+  background-color: rgba(43, 37, 48, 0.89);
+  opacity: 1;
+  padding-left: 40%;
+  padding-bottom: 10px;
+  margin-top: 5%;
+}
+
+label, h1 {
+  color: #ece9e5;
+}
+
+h1 {
+  text-transform: uppercase;
+  padding-left: 3%;
+  padding-top: 10px;
+}
+
+.row2 {
+  background-color: rgba(43, 37, 48, 0.89);
+  opacity: 1;
+}
+
+th, tr {
+  border: 1px solid black;
+}
+
+.f {
+  border: 1px solid black;
+}
+
+table {
+ background-color: #ffffff; 
+} 
+}

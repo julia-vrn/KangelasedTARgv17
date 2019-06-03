@@ -134,6 +134,12 @@ require("abifunktsioonid.php");
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" name="start">
                     Start the adventure
                 </button>
+                <button type="button" class="btn btn-primary" name="start" style="margin-left: 10px" onClick="window.location.href = 'adding.php'">
+                    Add your own hero
+                </button>
+                <button type="button" class="btn btn-primary" name="start" style="margin-left: 10px" onClick="window.location.href = 'deleting.php'">
+                    Delete a hero
+                </button>
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog  mw-100 w-50 h-50" role="document">
                         <div class="modal-content">
