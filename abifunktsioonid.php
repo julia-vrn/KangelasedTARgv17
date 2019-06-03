@@ -46,9 +46,18 @@ function getSituation($situation) {
 
 function battle() {
     $number = rand(1,3);
-
     if ($number == 1) return "You lose!";
+    else if ($number == 2) return "?"; /* The result depends on chosen hero and gets formed on result.php
+                                        If a chosen character is superhero, then you win */
     else return "You won!";
+}
+
+function is_superhero($hero_id) {
+    global $yhendus;
+    $kask = $yhendus->prepare("Select superhero from heroes where hero_id=".$hero_id);
+    $kask->bind_result($super);
+    $kask->execute();
+    return $super;
 }
 ?>
 

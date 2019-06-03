@@ -5,8 +5,13 @@ require("abifunktsioonid.php");
   $_SESSION['situation'] = $_GET['situation'];
   $_SESSION['result1']=$_SESSION['result'];
   $_SESSION['people1']=$_SESSION['people'];
-   
-  
+
+  if ($_SESSION['result1'] == '?') {
+    if(is_superhero($_SESSION['hero']) != '0') {
+        $_SESSION['result1'] = 'You won!';
+    }
+    else $_SESSION['result1'] = 'You lose!';
+  }
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,10 +77,16 @@ require("abifunktsioonid.php");
                                               echo "</span></div>"; 
  
   if($_SESSION['result1']=='You won!'){
-      echo "<div class='col-12 d-flex justify-content-center'><span class='display--result__saved'>People saved: ".$_SESSION['people1'];
+
+      $randomCase = rand(1,4);
+      if ($randomCase == 1 || $randomCase == 2) $people_saved = $_SESSION['people'];
+      else if ($randomCase == 3) $people_saved = rand($_SESSION['people1'] * 0.75, $_SESSION['people1']);
+      else $people_saved = rand($_SESSION['people1'] * 0.5, $_SESSION['people1']);
+
+      echo "<div class='col-12 d-flex justify-content-center'><span class='display--result__saved'>People saved: ".$people_saved." out of ".$_SESSION['people1'];
                                               echo "</span></div>";
     
-    $kask=$yhendus->prepare("Update heroes set result=result+".$_SESSION['people1']." where hero_id=?");
+    $kask=$yhendus->prepare("Update heroes set result=result+".$people_saved." where hero_id=?");
     $kask->bind_param("i", $_SESSION['hero']);
     $kask->execute();   
  }
