@@ -219,9 +219,14 @@ body{
   transform: translateY(0);
 }
 
+a .btn-adventure {
+  display: inline-block;
+}
+
+/*КНОПКИ*/
 .btn-adventure {
-  padding: 2.5rem;
-  font-size: 2rem;
+  padding: 1.5rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   color: #e6d329;
   font-family: 'Orbitron', sans-serif;
@@ -234,3 +239,4 @@ body{
   outline: none;
   border: none;
 }
+
